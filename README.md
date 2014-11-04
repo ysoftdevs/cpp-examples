@@ -144,8 +144,6 @@ because gradle is using "Build by convention".
 No further configuration is needed.
 Gradle is able to determine compiler chain and use available compiler, e.g. g++ or Visual Studio.
 
-Note for Visual Studio 2013: Use Gradle at least night build 1.10-20131122230018
-
 How to run:
 
     cd gradle-cpp-plugin/01-hello-muni
@@ -173,7 +171,6 @@ How to run:
 
 ### 03-hello-muni-with-debug ###
 
-Current implementation of C++ support in Gradle is in early stage, but it's very promising.
 This example shows how to update build script to add debug flags for compilers like GCC or VS.
 
 How to run:
