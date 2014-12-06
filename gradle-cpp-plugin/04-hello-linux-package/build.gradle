@@ -1,8 +1,31 @@
-apply plugin: 'cpp'
 plugins {
   id "nebula.os-package" version "2.0.3"
 }
 
+apply plugin: 'cpp'
+
 executables {
-    main
+    hello {}
 }
+
+ospackage {
+    packageName = "hello"
+    version = "1.0"
+    release = 1
+    os = LINUX
+    packageDescription = "Linux Gradle hello package"
+    summary = "contains binary with hello world example"
+
+    from("build/binaries/helloExecutable") {
+        into "/usr/bin/"
+    }
+}
+
+buildDeb {
+    requires("libc6")
+}
+
+buildRpm {
+    requires("libc6")
+}
+
