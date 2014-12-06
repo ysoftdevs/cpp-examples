@@ -1,6 +1,5 @@
 apply plugin: 'cpp'
 
 executables {
-    main {
-    }
+    main
 }
