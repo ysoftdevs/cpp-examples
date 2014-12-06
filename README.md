@@ -180,6 +180,24 @@ How to run:
     cd build/binaries/mainExecutable
     ./03-hello-muni-with-debug
 
+
+### 04-hello-linux-package ###
+
+Example shows how to create build of C++ application by Gradle and create Linux package.
+Linux package is based on Netflix Nebula OS plugin for Gradle: http://plugins.gradle.org/plugin/nebula.os-package
+
+How to run:
+
+    cd gradle-cpp-plugin/04-hello-linux-package
+    gradle helloExecutable
+    gradle buildDeb buildRpm
+
+DEB and RPM package is stored in build/distributions.
+
+You can list content of DEB package:
+
+    dpkg -c build/distributions/hello_1.0-1_all.deb
+
 Minunit testing
 ---------------
 
