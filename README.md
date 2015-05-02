@@ -263,8 +263,18 @@ Copy required resources/dll to mainExecutable by command:
 
     gradle prepare
 
-### 02-sdl2-video
+### 02-sdl2-video - Visual Studio version
 
+Open solution file in VisualStudio. 
+Verify that SDL2 is installed in your solution.
+Go to Tools - NuGet Packaga Manager - Manage NuGet Packages for Solution.
+Search for SDL. Select Simple DirectMedia Layer version 2.x (it will be most likely the second package). Select install.
+
+Now you'll be able to build the package.
+
+### 02-sdl2-video - Gradle version
+
+It's possible to build the same application by Gradle.
 Graphic initialization example for SDL2.
 Initialize graphic interface, load BMP file and display it.
 
