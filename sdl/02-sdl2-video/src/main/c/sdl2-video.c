@@ -2,7 +2,9 @@
 //
 
 #include <stdio.h>
-#include "SDL2/SDL.h"
+#include "SDL.h"
+// Linux build will probably need little bit different include
+//#include "SDL2/SDL.h"
 
 int main(int argc, char* argv[]) {
     SDL_Window *win = NULL;
@@ -27,7 +29,7 @@ int main(int argc, char* argv[]) {
         return 3;
     }
 
-    bmp = SDL_LoadBMP("./smajlik.bmp");
+    bmp = SDL_LoadBMP("./src/main/resources/smajlik.bmp");
     if (bmp == NULL){
         printf("%s\n", SDL_GetError());
         return 4;

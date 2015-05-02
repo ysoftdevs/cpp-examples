@@ -8,7 +8,7 @@ sources {
                 include "**/*.c"
             }
             exportedHeaders {
-                srcDir "../build/include"
+                srcDir "../build/include/SDL2"
             }
         }
     }
