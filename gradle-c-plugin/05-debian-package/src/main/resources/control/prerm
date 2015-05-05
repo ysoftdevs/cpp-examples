@@ -1,6 +1,0 @@
-#!/bin/sh
-
-set -e
-
-# Pre-uninstallation script
-

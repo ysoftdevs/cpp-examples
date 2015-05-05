@@ -1,7 +1,9 @@
 apply plugin: 'c'
 
-executables {
-    main {
+model {
+    components {
+        main(NativeExecutableSpec) {
+            
+        }
     }
 }
-

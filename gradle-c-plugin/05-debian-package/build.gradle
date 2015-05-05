@@ -1,45 +1,34 @@
-import org.gradle.api.publish.maven.MavenPublication
-buildscript {
-    repositories {
-        maven {
-            url "http://dl.bintray.com/gesellix/gradle-plugins"
-        }
-        mavenCentral()
-        mavenLocal()
-    }
-    dependencies {
-        classpath "de.gesellix:gradle-debian-plugin:12"
-    }
+plugins {
+  id "nebula.os-package" version "2.0.3"
 }
 
-apply plugin: 'maven'
-apply plugin: 'pkg-debian'
 apply plugin: 'c'
 
-version = "1.0.0"
-
-executables {
-    hello {
-    }
-}
-
-task prepare(type: Copy) {
-    description "Copy files to Linux directory layout"
-    from "build/binaries/helloExecutable"
-    into "build/linux/usr/bin"
-}
-
-debian {
-    packagename = "hello-fimuni"
-    publications = ['fimuni']
-    controlDirectory = "$projectDir/src/main/resources/control"
-    changelogFile = "$projectDir/src/main/resources/txt/changelog.txt"
-
-    data {
-        def baseDir = "$buildDir/linux"
-        dir {
-            name = baseDir
+model {
+    components {
+        hello(NativeExecutableSpec) {
+            
         }
     }
 }
 
+ospackage {
+    packageName = "hello"
+    version = "1.0"
+    release = 1
+    os = LINUX
+    packageDescription = "Linux Gradle hello package"
+    summary = "contains binary with hello world example"
+
+    from("build/binaries/helloExecutable") {
+        into "/usr/bin/"
+    }
+}
+
+buildDeb {
+    requires("libc6")
+}
+
+buildRpm {
+    requires("libc6")
+}

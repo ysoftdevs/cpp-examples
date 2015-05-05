@@ -1,5 +1,0 @@
-#!/bin/sh
-set -e
-
-# Post installation script - executed at the last phase of installation
-
