@@ -28,7 +28,7 @@ How to run:
 Check - unit test
 -----------------
 
-Check is unit testing framework for C: http://check.sourceforge.net/
+Check is unit testing framework for C: http://libcheck.github.io/check/
 
 This directory contains simple example. You can uncomment age++ to create bug and rerun tests.
 
