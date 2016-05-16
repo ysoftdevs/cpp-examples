@@ -50,7 +50,25 @@ How to run:
     ./generate-source-code.sh
     ./compile-source-code.sh
     ./download
+
+Go language
+-----------
+
+Go examples based on: https://golang.org/
+
+### 01-hello ###
+
+How to run:
+
+    cd 01-hello
+    go run hello.go
     
+### 02-conway ###
+
+How to run
+
+    cd 02-conway
+    go run conway.go    
 
 GTK+
 ----
