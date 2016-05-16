@@ -2,9 +2,7 @@
 //
 
 #include <stdio.h>
-#include "SDL.h"
-// Linux build will probably need little bit different include
-//#include "SDL2/SDL.h"
+#include "SDL2/SDL.h"
 
 int main(int argc, char* argv[]) {
     SDL_Window *win = NULL;

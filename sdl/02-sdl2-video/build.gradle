@@ -1,22 +1,12 @@
 apply plugin: 'c'
 apply plugin: 'visual-studio'
 
-sources {
-    main {
-        c {
-            source {
-                include "**/*.c"
-            }
-            exportedHeaders {
-                srcDir "../build/include/SDL2"
-            }
-        }
+model {
+    components {
+        main(NativeExecutableSpec) {}
     }
-}
-
-executables {
-    main {
-        binaries.all {
+    binaries {
+        all {
             if (toolChain in VisualCpp) {
                 cCompiler.args "/MD"
                 linker.args "/SUBSYSTEM:CONSOLE", "/LIBPATH:../build/lib/", "SDL2main.lib", "SDL2.lib"
