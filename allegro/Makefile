@@ -3,8 +3,8 @@ EXAMPLE_OBJECTS_01 = example-01.o
 EXAMPLE_OBJECTS_02 = example-02.o
 EXAMPLE_OBJECTS_03 = example-03.o
 
-CFLAGS  = `pkg-config --cflags allegro-5.0 allegro_image-5.0`
-LDADD   = `pkg-config --libs allegro-5.0 allegro_image-5.0`
+CFLAGS  = `pkg-config --cflags allegro-5 allegro_image-5`
+LDADD   = `pkg-config --libs allegro-5 allegro_image-5`
 
 all: example-01 example-02 example-03
 
