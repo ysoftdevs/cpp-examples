@@ -1,0 +1,20 @@
+FROM fedora
+RUN yum install -y git gcc make vim check-devel curl-devel gtk3-devel
+#RUN add-apt-repository -y ppa:allegro/5.2
+#RUN apt-get update && apt-get install -y liballegro5-dev
+RUN yum install -y fluxbox xterm
+RUN yum install -y tigervnc-server
+RUN yum install -y gcc allegro5-devel allegro5-addon-image-devel
+RUN yum install -y nodejs
+RUN yum install -y screen
+#RUN apt-get install -y xterm
+#RUN apt-get install -y gradle libsdl2-dev
+#RUN apt-get install -y libgtk-3-dev
+RUN mkdir -p ~/.vnc
+RUN echo "fluxbox &"> ~/.vnc/xstartup
+RUN chmod u+x ~/.vnc/xstartup
+RUN yum install -y nc telnet
+RUN yum install -y gradle
+EXPOSE 22
+EXPOSE 5901
+
