@@ -1,0 +1,14 @@
+FROM ubuntu
+RUN apt-get update && apt-get install -y git gcc make software-properties-common vim tightvncserver openssh-server
+RUN add-apt-repository -y ppa:allegro/5.2
+RUN apt-get update && apt-get install -y liballegro5-dev
+RUN apt-get install -y fluxbox
+RUN apt-get install -y xterm
+RUN apt-get install -y gradle libsdl2-dev
+RUN apt-get install -y libgtk-3-dev
+RUN mkdir -p ~/.vnc
+RUN echo "fluxbox &"> ~/.vnc/xstartup
+RUN chmod u+x ~/.vnc/xstartup
+EXPOSE 22
+EXPOSE 5901
+

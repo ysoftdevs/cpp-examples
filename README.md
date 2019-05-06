@@ -2,7 +2,22 @@ FI MUNI - C and C++ examples
 ============================
 
 Examples related to talks at FI MUNI.
-Georgik's blog: http://georgik.sinusgear.com
+Georgik's blog: https://georgik.rocks
+
+Docker image for running examples
+---------------------------------
+
+It's possible to run most of examples in Docker container:
+
+    docker build -t fedora-devel -f Dockerfile.fedora .
+    docker run -p 5901:5901 -v /path-to-cpp-examples:/opt/cpp-examples -it fedora-devel /bin/bash
+
+Applications with UI could be viewed via VNC viewer.
+Run following command in running container:
+
+    vncserver
+
+Then connect your VNC client to localhost:5901.
 
 Allegro
 -------
